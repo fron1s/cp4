@@ -1,4 +1,4 @@
-package pl.jkanclerz;
+package pl.vzaiets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,8 +20,11 @@ public class Main {
             greeter.greet(ladyName);
         }
 
+        System.out.println("-------------------");
         names.stream()
                 .filter(name -> name.endsWith("a")) // python way lambda name: name[-1] == "a"
+                .filter(name -> name.startsWith("A"))
+                .map(String::toUpperCase)
                 .forEach(greeter::greet);
 
     }
